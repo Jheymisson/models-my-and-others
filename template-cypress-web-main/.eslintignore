@@ -1,0 +1,10 @@
+*.feature
+*.json
+node_modules/*
+config/*
+yarn.lock
+videos/*
+downloads/*
+cucumber-report/*
+screenshots/*
+.husky/*

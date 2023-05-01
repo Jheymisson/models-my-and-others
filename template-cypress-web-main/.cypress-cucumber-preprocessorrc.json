@@ -1,0 +1,10 @@
+{
+  "nonGlobalStepDefinitions": false,
+  "step_definitions": "cypress/support/step_definitions",
+  "cucumberJson": {
+    "generate": true,
+    "outputFolder": "cucumber-report",
+    "filePrefix": "",
+    "fileSuffix": ".cucumber"
+  }
+}

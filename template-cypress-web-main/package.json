@@ -1,0 +1,74 @@
+{
+  "name": "web-ta-builders",
+  "version": "1.0.0",
+  "description": "Web Test Automation - Sample",
+  "main": "cypress.config.js",
+  "type": "module",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "babel-eslint": "^10.1.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-eslint": "^15.0.1",
+    "solidarity": "^3.0.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-typescript": "^7.18.6",
+    "@mongodb-js/zstd": "^1.0.0",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@types/mongodb": "^4.0.7",
+    "bson-ext": "^4.0.3",
+    "cypress": "12.0.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-dotenv": "^2.0.0",
+    "cypress-plugin-tab": "^1.0.5",
+    "find-config": "^1.0.0",
+    "kerberos": "^2.0.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "mongodb": "^4.12.1",
+    "mongodb-client-encryption": "^2.3.0",
+    "multiple-cucumber-html-reporter": "^3.0.1",
+    "snappy": "^7.2.2",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "cy:run:chrome": "cypress run --browser chrome --config video=false --env TAGS=\"not @ignore\"",
+    "cy:run:main": "yarn solidarity && cypress run --browser chrome --config video=false --env TAGS=\"not @ignore and @main_flow\"",
+    "cy:run:alternative": "yarn solidarity && cypress run --browser chrome --config video=false --env TAGS=\"not @ignore and @alternative_flow\"",
+    "cy:run:exception": "yarn solidarity && cypress run --browser chrome --config video=false --env TAGS=\"not @ignore and @exception_flow\"",
+    "cy:run:headless": "yarn solidarity && cypress run --browser chrome --config video=false --headless --config video=false  --env TAGS=\"not @ignore\"",
+    "cy:open": "cypress open --env TAGS=\"not @ignore\"",
+    "cy:run:record": "cypress run --record --key db0589ce-b586-45c9-825f-ab3e171fb8d0",
+    "report:html": "node cypress/plugins/cucumber-html-report.js",
+    "lint": "eslint './**/*.{js,cjs,mjs,jsx,ts,tsx}' --fix",
+    "pretty": "prettier --config ./.prettierrc.json --write \"**/*.{js,cjs,mjs,ts}*\"",
+    "solidarity": "solidarity --verbose",
+    "husk:prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js?(x)": [
+      "yarn pretty",
+      "yarn lint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "author": "Squad EC",
+  "license": "ISC"
+}

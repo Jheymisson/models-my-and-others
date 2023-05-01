@@ -1,0 +1,47 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "cypress/globals": true
+  },
+  "extends": [
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended",
+    "plugin:promise/recommended",
+    "airbnb-base",
+    "prettier"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "plugins": ["promise", "import", "cypress"],
+  "rules": {
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "off",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    "cypress/no-pause": "error",
+    "prefer-destructuring": "warn",
+    "class-methods-use-this": "off",
+    "no-unused-expressions": "off",
+    "global-require": "error",
+    "func-names": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "no-magic-numbers": "off",
+    "no-useless-escape": "off",
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+    "no-duplicate-imports": "error",
+    "promise/prefer-await-to-callbacks": "error",
+    "promise/prefer-await-to-then": "error"
+  }
+}

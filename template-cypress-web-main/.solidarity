@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json.schemastore.org/solidaritySchema",
+  "requirements": {
+    "Node": [
+      {
+        "rule": "cli",
+        "binary": "node",
+        "semver": ">=16.13.2"
+      }
+    ],
+    "Package JSON": [
+      {
+        "rule": "file",
+        "location": "./package.json"
+      }
+    ],
+    "NPM": [
+      {
+        "rule": "cli",
+        "binary": "npm",
+        "semver": ">=8.19.2"
+      }
+    ],
+    "Yarn": [
+      {
+        "rule": "cli",
+        "binary": "yarn",
+        "version": "--version",
+        "semver": ">=1.22.19"
+      }
+    ]
+  }
+}
